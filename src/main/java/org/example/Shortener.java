@@ -1,11 +1,28 @@
 package org.example;
 
+import org.example.strategy.StorageStrategy;
+
 public class Shortener {
+    private Long lastId = 0l;
+
+    private StorageStrategy storageStrategy;
+
+    public Shortener(StorageStrategy storageStrategy) {
+         this.storageStrategy = storageStrategy;
+    }
+
     public Long getId(String string){
-        return null;
+        if (storageStrategy.containsValue(string)) {
+            return storageStrategy.getKey(string);
+        }
+
+        lastId++;
+        storageStrategy.put(lastId,string);
+
+        return lastId;
     }
     public String getString(Long id){
-        return null;
+        return storageStrategy.getValue(id);
     }
 
 }
