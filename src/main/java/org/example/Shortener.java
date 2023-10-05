@@ -11,7 +11,7 @@ public class Shortener {
          this.storageStrategy = storageStrategy;
     }
 
-    public Long getId(String string){
+    public synchronized Long getId(String string){
         if (storageStrategy.containsValue(string)) {
             return storageStrategy.getKey(string);
         }
@@ -21,7 +21,7 @@ public class Shortener {
 
         return lastId;
     }
-    public String getString(Long id){
+    public synchronized String getString(Long id){
         return storageStrategy.getValue(id);
     }
 
