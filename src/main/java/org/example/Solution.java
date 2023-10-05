@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.strategy.HashMapStorageStrategy;
+import org.example.strategy.OurHashMapStorageStrategy;
 import org.example.strategy.StorageStrategy;
 
 import java.util.Date;
@@ -60,6 +61,7 @@ public class Solution {
     public static void main(String[] args) {
         long elements = 10000;
         testStrategy(new HashMapStorageStrategy(),elements);
+        testStrategy(new OurHashMapStorageStrategy(),elements);
     }
 
 }
