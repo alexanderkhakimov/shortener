@@ -1,9 +1,6 @@
 package org.example;
 
-import org.example.strategy.FileStorageStrategy;
-import org.example.strategy.HashMapStorageStrategy;
-import org.example.strategy.OurHashMapStorageStrategy;
-import org.example.strategy.StorageStrategy;
+import org.example.strategy.*;
 
 import java.util.Date;
 import java.util.HashSet;
@@ -60,10 +57,11 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        long elements = 100;
+        long elements = 10000;
         testStrategy(new HashMapStorageStrategy(),elements);
         testStrategy(new OurHashMapStorageStrategy(),elements);
-        testStrategy(new FileStorageStrategy(),elements);
+        //testStrategy(new FileStorageStrategy(),elements);
+        testStrategy(new OurHashBiMapStorageStrategy(),elements);
     }
 
 }
