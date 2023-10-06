@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.strategy.FileStorageStrategy;
 import org.example.strategy.HashMapStorageStrategy;
 import org.example.strategy.OurHashMapStorageStrategy;
 import org.example.strategy.StorageStrategy;
@@ -59,9 +60,10 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        long elements = 10000;
+        long elements = 100;
         testStrategy(new HashMapStorageStrategy(),elements);
         testStrategy(new OurHashMapStorageStrategy(),elements);
+        testStrategy(new FileStorageStrategy(),elements);
     }
 
 }

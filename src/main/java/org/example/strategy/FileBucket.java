@@ -56,7 +56,7 @@ public class FileBucket {
         try{
             Files.delete(path);
         }catch (IOException e){
-            
+
         }
     }
 }
