@@ -57,11 +57,12 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        long elements = 10000;
-        testStrategy(new HashMapStorageStrategy(),elements);
-        testStrategy(new OurHashMapStorageStrategy(),elements);
+        long elements = 100000;
+        //testStrategy(new HashMapStorageStrategy(),elements);
+       // testStrategy(new OurHashMapStorageStrategy(),elements);
         //testStrategy(new FileStorageStrategy(),elements);
         testStrategy(new OurHashBiMapStorageStrategy(),elements);
+        testStrategy(new HashBiMapStorageStrategy(),elements);
     }
 
 }
